@@ -13,9 +13,9 @@ try:
     nr_numbers = int(input(f"How many numbers would you like?\n"))
 
     # Generate random samples for letters, numbers, and symbols
-    ran_letters = (random.sample(letters, nr_letters))
-    ran_numbers = (random.sample(numbers, nr_numbers))
-    ran_symbols = (random.sample(symbols, nr_symbols))
+    ran_letters = (random.choices(letters, k=nr_letters))
+    ran_numbers = (random.choices(numbers, k=nr_numbers))
+    ran_symbols = (random.choices(symbols, k=nr_symbols))
 
     # Combine the lists into a single list
     password_list = ran_letters + ran_numbers + ran_symbols
@@ -26,6 +26,6 @@ try:
     # Convert the list to a string and print the password
     password = "".join(password_list)
     print(password)
-    
+
 except ValueError:
     print("Please enter a valid number.")
