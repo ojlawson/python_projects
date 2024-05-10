@@ -27,7 +27,7 @@ def convert_to_bind_format(input_file, output_file):
             type = re.sub(r'Alias \(CNAME\)', 'CNAME', type)  # regex to change record type to BIND format
             type = re.sub(r'Host \(A\)', 'A', type)  # regex to change record type to BIND format
             data = data.replace('static', '').strip()  # remove 'static' and trailing whitespaces
-            file.write(f"{name}\tIN\t{type}\t{data}\n")  # write the formatted DNS records to the output file
+            file.write(f"{name}\t300\tIN\t{type}\t{data}\n")  # write the formatted DNS records to the output file
 
 
 # Specify input and output file names
